@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yf
@@ -17,14 +18,31 @@ return [
         'SETTING' => [
             'worker_num' => 8,
             'reload_async' => true,
-            'max_wait_time'=>3
+            'max_wait_time' => 3
         ],
-        'TASK'=>[
-            'workerNum'=>4,
-            'maxRunningNum'=>128,
-            'timeout'=>15
+        'TASK' => [
+            'workerNum' => 4,
+            'maxRunningNum' => 128,
+            'timeout' => 15
         ]
     ],
     'TEMP_DIR' => null,
-    'LOG_DIR' => null
+    'LOG_DIR' => null,
+    'MYSQL'  => [
+        'host'          => 'localhost',
+        'port'          => 3306,
+        'user'          => 'root',
+        'password'      => 'mysql_password',
+        'database'      => 'tp',
+        'timeout'       => 5,
+        'charset'       => 'utf8mb4',
+    ],
+    'JWT' => [
+        'iss' => 'jingzhao',    // 发行人
+        'aud' => 'jingzhao',    // 用户
+        'exp' => 7200,          // 过期时间 默认2小时 2*60*60=7200
+        'sub' => 'zhoubian',    // 主题
+        'nbf' => '',            // 在此之前不可用
+        'key' => 'www.zhoubian.com',    // 签名用的key
+    ],
 ];

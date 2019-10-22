@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: yf
@@ -13,6 +14,8 @@ use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
+use EasySwoole\Mysqli\Config as MysqlConfig;
+use EasySwoole\MysqliPool\Mysql;
 
 class EasySwooleEvent implements Event
 {
@@ -21,6 +24,11 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement initialize() method.
         date_default_timezone_set('Asia/Shanghai');
+        // 注册数据库链接池
+        $mysqlConfig = Config::getInstance()->getConf('MYSQL');
+        $mysqlConfigObj = new MysqlConfig($mysqlConfig);
+        $poolConf = Mysql::getInstance()->register('mysql', $mysqlConfigObj);
+        $poolConf->setMaxObjectNum(20);
     }
 
     public static function mainServerCreate(EventRegister $register)
