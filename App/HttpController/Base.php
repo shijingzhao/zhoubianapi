@@ -13,6 +13,7 @@ class Base extends Controller
     public $result = [];
 
     private $notLogin = [
+        '/user/login',
         '/seller/login',
     ];
 
@@ -35,14 +36,14 @@ class Base extends Controller
         $ret =  parent::onRequest($action);
         if ($ret === false) return false;
 
-        $v = $this->init($action);
+        $vObj = $this->init($action);
         if (empty($v)) return true;
 
-        $ret = $this->validate($v);
+        $ret = $this->validate($vObj);
         if ($ret != false) return true;
 
         $err = $v->getError();
-        $msg = $err->getFieldAlias().$err->getErrorRuleMsg();
+        $msg = $err->getFieldAlias() . ' ' . $err->getErrorRuleMsg();
         $this->writeJson(Status::CODE_BAD_REQUEST, [], $msg);
         return false;
     }

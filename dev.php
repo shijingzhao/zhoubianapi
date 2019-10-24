@@ -45,4 +45,8 @@ return [
         'nbf' => '',            // 在此之前不可用
         'key' => 'www.zhoubian.com',    // 签名用的key
     ],
+    'WECHAT' => [
+        'appid' => 'wx6f021753a6afe311',
+        'appsecret' => '87b8c66631361e31044a59827fdff367'
+    ]
 ];

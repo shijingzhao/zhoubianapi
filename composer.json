@@ -8,6 +8,9 @@
         "easyswoole/easyswoole": "^3.3",
         "easyswoole/mysqli": "^1.1",
         "easyswoole/mysqli-pool": "^1.0",
-        "easyswoole/jwt": "^1.0"
+        "easyswoole/jwt": "^1.0",
+        "easyswoole/curl": "^1.0",
+        "easyswoole/wechat": "^1.0",
+        "easyswoole/redis": "^1.0"
     }
 }
