@@ -46,7 +46,7 @@ return [
         'key' => 'www.zhoubian.com',    // 签名用的key
     ],
     'WECHAT' => [
-        'appid' => 'wx6f021753a6afe311',
-        'appsecret' => '87b8c66631361e31044a59827fdff367'
+        'appid' => 'wx31673a2b7d441090',
+        'appsecret' => '377d97623202d66c9332c0502a3845c7'
     ]
 ];
