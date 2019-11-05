@@ -37,12 +37,12 @@ class Base extends Controller
         if ($ret === false) return false;
 
         $vObj = $this->init($action);
-        if (empty($v)) return true;
+        if (empty($vObj)) return true;
 
         $ret = $this->validate($vObj);
         if ($ret != false) return true;
 
-        $err = $v->getError();
+        $err = $vObj->getError();
         $msg = $err->getFieldAlias() . ' ' . $err->getErrorRuleMsg();
         $this->writeJson(Status::CODE_BAD_REQUEST, [], $msg);
         return false;
