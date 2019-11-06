@@ -16,7 +16,7 @@ namespace App\Model\WeChat;
 class WeChatModel extends \App\Model\BaseModel
 {
     protected $table = 'wechat';
-    protected $primaryKey = 'wx_id';
+    protected $primaryKey = 'wxId';
 
 
     /**
@@ -48,15 +48,15 @@ class WeChatModel extends \App\Model\BaseModel
      * @param  WeChatBean $bean
      * @return WeChatBean
      */
-    public function getOne(string $openid): ?WeChatBean
+    public function getOne(string $openid): array
     {
         $info = $this->getDbConnection()
             ->where('openid', $openid)
             ->where('deleted', 0)
             ->getOne($this->table);
         if (empty($info)) {
-            return null;
+            return [];
         }
-        return new WeChatBean($info);
+        return $info;
     }
 }

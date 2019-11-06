@@ -11,24 +11,24 @@ namespace App\Model\WeChat;
 
 class WeChatBean extends \EasySwoole\Spl\SplBean
 {
-    protected $wx_id;
+    protected $wxId;
     protected $openid;
     protected $unionid;
-    protected $u_id;
-    protected $s_id;
-    protected $wx_type;
-    protected $wx_status;
+    protected $uId;
+    protected $sId;
+    protected $wxType;
+    protected $wxStatus;
     protected $created;
     protected $updated;
     protected $deleted;
 
-    public function setWeChatId($wx_id)
+    public function setWeChatId($wxId)
     {
-        $this->wx_id = $wx_id;
+        $this->wxId = $wxId;
     }
     public function getWeChatId()
     {
-        return $this->wx_id;
+        return $this->wxId;
     }
 
     public function setOpenId($openid)
@@ -46,25 +46,25 @@ class WeChatBean extends \EasySwoole\Spl\SplBean
     }
     public function getUnionId()
     {
-        return $this->wx_id;
+        return $this->wxId;
     }
 
-    public function setUId($u_id)
+    public function setUId($uId)
     {
-        $this->u_id = $u_id;
+        $this->uId = $uId;
     }
     public function getUId()
     {
-        return $this->u_id;
+        return $this->uId;
     }
 
-    public function setSId($s_id)
+    public function setSId($sId)
     {
-        $this->s_id = $s_id;
+        $this->sId = $sId;
     }
     public function getSId()
     {
-        return $this->s_id;
+        return $this->sId;
     }
 
     public function setNickName($nickname)
@@ -85,22 +85,22 @@ class WeChatBean extends \EasySwoole\Spl\SplBean
         return $this->avatar;
     }
 
-    public function setType($wx_type)
+    public function setType($wxType)
     {
-        $this->wx_type = $wx_type;
+        $this->wxType = $wxType;
     }
     public function getTyep()
     {
-        return $this->wx_type;
+        return $this->wxType;
     }
 
-    public function setStatus($wx_status)
+    public function setStatus($wxStatus)
     {
-        $this->wx_status = $wx_status;
+        $this->wxStatus = $wxStatus;
     }
     public function getStatus()
     {
-        return $this->wx_status;
+        return $this->wxStatus;
     }
 
     public function setCreate($created)

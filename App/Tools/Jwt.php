@@ -48,7 +48,6 @@ class Jwt
         $jwt =  EasySwooleJwt::getInstance();
         try {
             $result = $jwt->decode($token);
-            var_dump($result);
             switch ($result->getStatus()) {
                 case  1:
                     $status = 1;

@@ -12,7 +12,6 @@ namespace App\HttpController\User;
 use EasySwoole\EasySwoole\Config;
 use App\Service\WeChat\WeChatAuth;
 use App\Model\User\UserModel;
-use App\Model\User\UserBean;
 use App\Model\WeChat\WeChatModel;
 use EasySwoole\MysqliPool\Mysql;
 
@@ -42,12 +41,9 @@ class Login extends \App\HttpController\Base
             if ($info == null) {
                 throw new \Exception('no user', 400);
             }
-            // 实例化用户映射
-            $userBeanObj = new UserBean();
-            $userBeanObj->setUId($info->getUId());
             // 获取用户信息
             $userModelObj = new UserModel($db);
-            $userInfo = $userModelObj->getOne($userBeanObj);
+            $userInfo = $userModelObj->getOne($info['uId']);
             if ($userInfo == null) {
                 throw new \Exception('no user', 400);
             }

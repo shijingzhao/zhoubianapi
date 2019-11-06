@@ -15,6 +15,7 @@ class Base extends Controller
     private $notLogin = [
         '/user/login',
         '/seller/login',
+        '/post/lists'
     ];
 
     public function index()

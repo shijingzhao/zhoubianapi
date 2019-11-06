@@ -16,7 +16,7 @@ namespace App\Model\User;
 class UserModel extends \App\Model\BaseModel
 {
     protected $table = 'user';
-    protected $primaryKey = 'u_id';
+    protected $primaryKey = 'uId';
 
 
     /**
@@ -48,15 +48,15 @@ class UserModel extends \App\Model\BaseModel
      * @param  UserBean $bean
      * @return UserBean
      */
-    public function getOne(UserBean $bean): ?UserBean
+    public function getOne(int $uId = 0):array
     {
         $info = $this->getDbConnection()
-            ->where($this->primaryKey, $bean->getUId())
+            ->where($this->primaryKey, $uId)
             ->where('deleted', 0)
             ->getOne($this->table);
         if (empty($info)) {
-            return null;
+            return [];
         }
-        return new UserBean($info);
+        return $info;
     }
 }
